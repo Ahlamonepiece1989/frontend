@@ -1,11 +1,21 @@
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/nav';
+
+
+
 
 function App() {
   return (
+
     <div className="App">
-      <h1>my App</h1>
+
+      <Nav/>
+
     </div>
+    
   );
 }
 
 export default App;
+
