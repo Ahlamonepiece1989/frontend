@@ -6,20 +6,18 @@ import {
     Route
 } from "react-router-dom";
 
-
-
-import Home from './Home';
-
-import Occasion from './Occasion';
-
-import SignUp from './SignUp';
+import { useHistory } from "react-router-dom";
 
 
 
-function nav() {
+
+function Navi({ token, setToken}) {
 
 
-	return (
+   const navigate  = useHistory();
+
+
+  return (
 
 <>
 
@@ -27,7 +25,7 @@ function nav() {
       
                 <Navbar className="color-nav" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="/">My Store</Navbar.Brand>
+    <Navbar.Brand href="/">FLOWERD</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
       <Nav
@@ -36,8 +34,23 @@ function nav() {
         navbarScroll>
 
         <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/occasions">occasion</Nav.Link>
-        <Nav.Link href="/signup">signup</Nav.Link>
+        <Nav.Link href="/ocassion">Occasion</Nav.Link>
+
+        {token ? (
+        <Nav.Link onClick={() => {setToken("")
+  navigate.push("/login") }}>Sign out</Nav.Link>
+       ) : (
+
+<>
+
+       <Nav.Link href="/signup">SignUp</Nav.Link>
+        <Nav.Link href="/signin">SignIn</Nav.Link>
+
+
+</>
+
+       )}
+ 
         
       </Nav>
 
@@ -56,24 +69,17 @@ function nav() {
 </Navbar>
                 </div>
                 <div>
-                    <Routes>
 
-
-                    <Route exact path='/occasions' element={<Occasion/>}/>
-
-                    <Route exact path='/signup' element={<SignUp/>}/>
-
-                    <Route  exact path='/' element={<Home />}/>
-                     
-                    </Routes>
+                
+                    
                 </div>
 
     
 
 </>
 
-		);
+    );
 }
 
 
-export default nav;
+export default Navi;

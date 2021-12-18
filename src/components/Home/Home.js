@@ -1,5 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
-import './Home.js';
+
 
 
 
@@ -17,8 +17,4 @@ export default function Home(props) {
     </div>
     
   );
-
-
-
 }
-    

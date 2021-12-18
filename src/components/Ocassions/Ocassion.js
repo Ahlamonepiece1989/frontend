@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-function Occasion() {
+export default  function Ocassion() {
   return (
 
     <div className="App">
@@ -11,5 +11,3 @@ function Occasion() {
     
   );
 }
-
-export default Occasion;
