@@ -1,20 +1,30 @@
-import React, { Component } from 'react';
-import { Navbar, NavDropdown, Form, FormControl, Button, Nav, Container } from 'react-bootstrap';
-import {
-  
-    Routes,
-    Route
-} from "react-router-dom";
+import React, { Component,useState } from 'react';
+import { Navbar, Form, FormControl, Nav, Container } from 'react-bootstrap';
+
 
 import { useHistory } from "react-router-dom";
 
 
 
 
-function Navi({ token, setToken}) {
+function Navi({ token, setToken, state, setState}) {
 
 
-   const navigate  = useHistory();
+  const navigate  = useHistory();
+
+
+
+
+
+  const searchItems = (searchValue) => {
+
+    this.setState(searchValue); 
+
+        };
+
+
+        console.log(state);
+
 
 
   return (
@@ -83,3 +93,4 @@ function Navi({ token, setToken}) {
 
 
 export default Navi;
+
