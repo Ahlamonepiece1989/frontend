@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react';
+import React, { Component, useState } from 'react';
 import { Navbar, Form, FormControl, Nav, Container } from 'react-bootstrap';
 
 
@@ -10,7 +10,7 @@ import { useHistory } from "react-router-dom";
 function Navi({ token, setToken, state, setState}) {
 
 
-  const navigate  = useHistory();
+   const navigate  = useHistory();
 
 
 
@@ -18,12 +18,12 @@ function Navi({ token, setToken, state, setState}) {
 
   const searchItems = (searchValue) => {
 
-    this.setState(searchValue); 
+    setState(searchValue); 
 
         };
 
 
-        console.log(state);
+      
 
 
 
@@ -70,7 +70,7 @@ function Navi({ token, setToken, state, setState}) {
           placeholder="Search"
           className="me-2"
           aria-label="Search"
-          onChange={(e) => this.searchItems(e.target.value)}
+          onChange={(e) => searchItems(e.target.value)}
 
         />
       </Form>
@@ -93,4 +93,5 @@ function Navi({ token, setToken, state, setState}) {
 
 
 export default Navi;
+
 
