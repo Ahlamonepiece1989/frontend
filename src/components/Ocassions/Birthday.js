@@ -5,7 +5,7 @@ export default  function Ocassion() {
 
     <div className="App">
 
-     Occasion
+     Birthday
 
     </div>
     

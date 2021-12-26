@@ -60,7 +60,8 @@ export default function App() {
       return <Login setToken={setToken} />;
     }}
   />
-
+<Route path='/happyBirthday' component={HappyBirthday} />
+      <Route path='/marriage' component={Marriage} />
 
 </div>
 );
