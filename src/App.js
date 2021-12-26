@@ -11,8 +11,9 @@ import Home from './Components/Home/Home';
 import SignUp from './Components/SignUp/SignUp';
 import Login from './Components/SignUp/Login';
 import Navi from "./Components/Navbar/Navi";
-import Ocassion from "./Components/Ocassions/Ocassion";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import HappyBirthday from "./Components/Ocassions/Birthday";
+import Marriage from "./Components/Ocassions/Marriage";
 
 export default function App() {
   const [token, setToken] = useState("");
@@ -27,13 +28,11 @@ export default function App() {
 
   return (
     <div>
-       {/* Store the token after recieve it.*/}
+      
        <Navi token={token} setToken={setToken} setState={setSearchedItem}/>
 
 
 
-
-{/* Route for home page that contains the roses.*/}
   <Route
     exact
     path="/"
@@ -46,12 +45,9 @@ export default function App() {
 
 
 
-
- <Route exact path="/ocassion" component={Ocassion} />
-
  <Route   exact path="/signup" component={SignUp} />
 
- {/* After sign in (Log In) the token recieved from the back end will be set, so other routes can use it. (Second step) */}
+ 
  <Route
     exact
     path="/signin"
