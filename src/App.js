@@ -4,7 +4,7 @@ import Home from './Components/Home/Home';
 import SignUp from './Components/SignUp/SignUp';
 import Login from './Components/SignUp/Login';
 import Navi from "./Components/Navbar/Navi";
-import Ocassion from "./Components/Ocassions/Ocassion";
+
 import React, { useState } from "react";
 import {Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
@@ -14,7 +14,7 @@ import Navi from "./Components/Navbar/Navi";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HappyBirthday from "./Components/Ocassions/Birthday";
 import Marriage from "./Components/Ocassions/Marriage";
-
+import famousDesigners from "./Components/Designers/famousDesigners";
 export default function App() {
   const [token, setToken] = useState("");
 
@@ -58,7 +58,7 @@ export default function App() {
   />
 <Route path='/happyBirthday' component={HappyBirthday} />
       <Route path='/marriage' component={Marriage} />
-
+      <Route path='/famousDesigners' component={famousDesigners} />
 </div>
 );
 }
