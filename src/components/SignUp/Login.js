@@ -6,9 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-
 import Grid from '@material-ui/core/Grid';
-
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
@@ -38,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function Login(setToken) {
+export default function Login({ setToken }) {
 
 
   const classes = useStyles();
@@ -49,30 +47,41 @@ export default function Login(setToken) {
   const [password, setPassword] = useState("");
 
 
+
+
+
+
   const changeEmail = (e) => {
       setEmail(e.target.value);
     };
 
+
+
+
   const changePassword = (e) => {
-      setPassword(e.target.value);
-    };
+    setPassword(e.target.value);
+  };
 
-    // Send user information to the server to check if it's exist in the database through post request.
-    const checkLogin = async () => {
-      try {
-        const response = await axios.post("http://localhost:5000/login", {
-          email: email,
-          password: password,
-        });
-        console.log(response.data)
-        //After recieve the token from the server, store it. (First step)
-        setToken(response.data.token);
-        navigate.push("/");
 
-      } catch (error) {
-        console.log("Error");
-      }
-    };
+  const checkLogin = async (e) => {
+
+    e.preventDefault();
+
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+        email: email,
+        password: password,
+      });
+      console.log(response.data)
+      setToken(response.data.token);
+      navigate.push("/");
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
 
     
 
@@ -102,8 +111,7 @@ export default function Login(setToken) {
                 label="Email"
                 type="email"
                 id="email"
-   
-                onChange={(e) => {changeEmail(e);}}
+                onChange={(e) => changeEmail(e)}
 
               />
             </Grid>
@@ -132,7 +140,7 @@ export default function Login(setToken) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={(e) => {checkLogin();}} > 
+            onClick={(e) => {checkLogin(e);}} > 
           
             Sign In
           </Button>

@@ -86,6 +86,7 @@ function Navi({ token, setToken, setState}) {
           <NavDropdown.Item href="/happyBirthday">Happy Birthday</NavDropdown.Item>
           <NavDropdown.Item href="/marriage">Marriage</NavDropdown.Item>
 
+          <NavDropdown.Item href="/graduation">Graduation</NavDropdown.Item>
 
 
         </NavDropdown>

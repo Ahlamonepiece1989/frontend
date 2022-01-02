@@ -6,6 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
+
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -62,7 +63,11 @@ export default function SignUp() {
   // send new information for user to sign up and add their values in the database.
   // First try to add new user, if it's exists, then forward to login page.
   
-  const addUser = async () => {
+  const addUser = async (e) => {
+
+
+
+    e.preventDefault();
 
 
       console.log({
@@ -77,7 +82,13 @@ export default function SignUp() {
       name: name,
       email: email,
       password: password,
+
+
     });
+
+
+     console.log(response.data);
+
     
     if (response.status === 201){
         navigate.push("/signin")
@@ -147,7 +158,7 @@ export default function SignUp() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={(e) => {addUser();}} > 
+            onClick={(e) => {addUser(e);}} > 
           
             Sign Up
           </Button>

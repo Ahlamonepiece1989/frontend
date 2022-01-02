@@ -11,7 +11,10 @@ const baseURL = "http://localhost:5000";
 
 
 
-export default  function Marriage(props) {
+
+export default  function Graduation(props) {
+  
+
 
 {/* Create filtered results if a search is done*/}
 const [filteredResults, setFilteredResults] = useState([]);
@@ -78,7 +81,7 @@ useEffect(() => {
 
                     filteredResults.map((productItem) => {
 
-                    	if(productItem.occasionType == "Marriage"){
+                    	if(productItem.occasionType == "Graduation"){
 
                     		return (
                          
@@ -105,7 +108,7 @@ useEffect(() => {
                     })
                 ) : (
                   data.map((productItem) => {
-                    if(productItem.occasionType == "Marriage"){
+                    if(productItem.occasionType == "Graduation"){
 
                     		return (
                          
