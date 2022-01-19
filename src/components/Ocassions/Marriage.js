@@ -1,3 +1,4 @@
+
 import React, {  useState, useEffect } from 'react';
 import Product from '../Home/product.js';
 
@@ -23,7 +24,7 @@ const key = props.item
 const [data, setData] = useState([]);
 
 
-
+//useeffect to get data from backend
 useEffect(() => {
     axios.get(`${baseURL}/products`).then((response) => {
 

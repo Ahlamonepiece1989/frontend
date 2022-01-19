@@ -26,13 +26,10 @@ function Product({title, price, img, addToCart}) {
   </Card.Body>
 
 
-  <button onClick={() => {addToCart([title, price, img]);}}>
-
-
-        Add to Cart
-
-
+  <button onClick={() => {addToCart({"title": title, "price": price});}}>
+    Add to Cart
   </button>
+
 
 
 </Card>

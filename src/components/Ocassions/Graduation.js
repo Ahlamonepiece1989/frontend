@@ -13,7 +13,7 @@ const baseURL = "http://localhost:5000";
 
 
 export default  function Graduation(props) {
-  
+  //const [post, setPost] = useState([]);
 
 
 {/* Create filtered results if a search is done*/}
@@ -143,3 +143,4 @@ useEffect(() => {
     
   );
 }
+
