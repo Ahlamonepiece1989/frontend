@@ -90,7 +90,7 @@ useEffect( () => {
 
     const result = await axios.post(
 
-      "http://localhost:5000/products",
+      "https://flower-sto.herokuapp.com/products",
 
       {
         title: title,
@@ -138,7 +138,7 @@ useEffect( () => {
 
     const result = await axios.put(
 
-      "http://localhost:5000/products",
+      "https://flower-sto.herokuapp.com/products",
 
       {
 

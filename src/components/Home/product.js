@@ -7,6 +7,9 @@ function Product({title, price, img, addToCart}) {
 
   console.log(price);
 
+
+  const userData = JSON.parse(localStorage.getItem('data'));
+
   
   return (
     <Card style={{ width: '18rem' }}>
@@ -26,7 +29,7 @@ function Product({title, price, img, addToCart}) {
   </Card.Body>
 
 
-  <button onClick={() => {addToCart({"title": title, "price": price});}}>
+  <button onClick={() => {addToCart({"title": title, "price": price, "user": userData._id});}}>
     Add to Cart
   </button>
 

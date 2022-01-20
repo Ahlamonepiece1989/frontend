@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
-const baseURL = "http://localhost:5000";
+const baseURL = "https://flower-sto.herokuapp.com";
 
 
 
@@ -96,7 +96,7 @@ const deleteProduct = async (id, index)=>{
 	console.log(id);
 
 
-	const result =  await axios.delete(`http://localhost:5000/products/${id}`,{
+	const result =  await axios.delete(`https://flower-sto.herokuapp.com/products/${id}`,{
 
       headers:{authorization: "Bearer " + token},
 
@@ -122,7 +122,7 @@ const editProduct = (id) => {
 	navigate.push({
 
 		pathname: '/manage',
-		state: { detail: id }//send datails for adited flower
+		state: { detail: id }
 
 		
 	})
@@ -160,6 +160,8 @@ function SaveDataToLocalStorage(data)
 
     localStorage.setItem('flowers', JSON.stringify(a));
 }
+
+
 
 console.log(token);
 

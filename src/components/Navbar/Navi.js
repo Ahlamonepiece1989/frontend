@@ -89,7 +89,7 @@ navigate.push("/signin");
       
                 <Navbar className="color-nav" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="/">FLOWERD</Navbar.Brand>
+    <Navbar.Brand href="/">Roses Store</Navbar.Brand>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll">
 

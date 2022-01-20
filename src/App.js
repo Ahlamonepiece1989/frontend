@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import SignUp from './Components/SignUp/SignUp';
@@ -137,3 +137,4 @@ export default function App() {
     </div>
   );
 }
+

@@ -1,4 +1,3 @@
-
 import React, {  useState, useEffect } from 'react';
 import Product from '../Home/product.js';
 
@@ -8,7 +7,7 @@ import { Row, Col} from "react-bootstrap"
 import axios from "axios";
 
 
-const baseURL = "http://localhost:5000";
+const baseURL = "https://flower-sto.herokuapp.com";
 
 
 
@@ -24,7 +23,7 @@ const key = props.item
 const [data, setData] = useState([]);
 
 
-//useeffect to get data from backend
+
 useEffect(() => {
     axios.get(`${baseURL}/products`).then((response) => {
 

@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import "./s.css";
 
@@ -10,7 +10,8 @@ export default function Cart() {
   const [cartItem, setCartItem] = useState(JSON.parse(localStorage.getItem("flowers")));
   
   
-  
+  // Get user data after login
+  const userData = JSON.parse(localStorage.getItem('data'));
 
 
   // Get the stored token
@@ -37,8 +38,9 @@ export default function Cart() {
     copiedArr.splice(index, 1);
 
     setCartItem(copiedArr);
-//to edit also in local storage
-localStorage.setItem("flowers", JSON.stringify(copiedArr));
+
+    localStorage.setItem("flowers", JSON.stringify(copiedArr));
+
     }
 
 
@@ -49,8 +51,8 @@ localStorage.setItem("flowers", JSON.stringify(copiedArr));
 
 
     const result = await axios.post(
-//endpoints//post take 2 parms (body,keys)
-      "http://localhost:5000/cart",
+
+      "https://flower-sto.herokuapp.com/cart",
 
       {
         cartItem: cartItem,
@@ -108,7 +110,7 @@ localStorage.setItem("flowers", JSON.stringify(copiedArr));
 
 <>
 
-      <h2></h2>
+      <h2>Cart</h2>
 
       <table id="table">
 
@@ -154,3 +156,4 @@ localStorage.setItem("flowers", JSON.stringify(copiedArr));
 
 
 }
+
